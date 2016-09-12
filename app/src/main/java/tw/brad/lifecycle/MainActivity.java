@@ -62,6 +62,22 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra("sound",false);
         startActivity(intent);
     }
+
+    public void gotoPage2v2(View v){
+        Intent intent = new Intent(this, Page2Activity.class);
+        intent.putExtra("name","Brad");
+        intent.putExtra("stage",4);
+        intent.putExtra("sound",false);
+
+        startActivityForResult(intent,77);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        Log.d("brad","onActivityResult");
+    }
+
     public void exit(View v){
         finish();
     }
