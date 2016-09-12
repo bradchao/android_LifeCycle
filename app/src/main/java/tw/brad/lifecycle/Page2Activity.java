@@ -26,4 +26,14 @@ public class Page2Activity extends AppCompatActivity {
                     "Temp: " + temp);
 
     }
+
+    @Override
+    public void finish() {
+        Intent it = new Intent();
+        it.putExtra("a",1);
+        it.putExtra("b",2);
+        setResult(99,it);
+        super.finish();
+
+    }
 }

@@ -73,9 +73,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+    protected void onActivityResult(
+            int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        Log.d("brad","onActivityResult");
+        Log.d("brad","onActivityResult:" + resultCode);
+        int a = data.getIntExtra("a",-1);
+        int b = data.getIntExtra("b",-1);
+        Log.d("brad", a + " : " + b);
+
+
     }
 
     public void exit(View v){
