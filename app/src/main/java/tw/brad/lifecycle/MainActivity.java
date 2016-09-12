@@ -71,16 +71,24 @@ public class MainActivity extends AppCompatActivity {
 
         startActivityForResult(intent,77);
     }
+    public void gotoPage3v2(View v){
+        Intent intent = new Intent(this, Page3Activity.class);
+        startActivityForResult(intent,66);
+
+    }
 
     @Override
     protected void onActivityResult(
             int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        Log.d("brad","onActivityResult:" + resultCode);
-        int a = data.getIntExtra("a",-1);
-        int b = data.getIntExtra("b",-1);
-        Log.d("brad", a + " : " + b);
-
+        Log.d("brad", "onActivityResult:" + resultCode);
+        if(requestCode == 77) {
+            int a = data.getIntExtra("a", -1);
+            int b = data.getIntExtra("b", -1);
+            Log.d("brad", a + " : " + b);
+        }else if (requestCode == 66){
+            Log.d("brad", "Page3 Back");
+        }
 
     }
 
