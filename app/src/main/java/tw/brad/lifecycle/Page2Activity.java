@@ -3,15 +3,21 @@ package tw.brad.lifecycle;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.widget.TextView;
 
 public class Page2Activity extends AppCompatActivity {
     private TextView mesg;
+    private MyApp myApp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_page2);
+
+        myApp = (MyApp)getApplication();
+        Log.d("brad", "myApp:a=" + myApp.getA());
+        Log.d("brad", "myApp:b=" + myApp.getB());
 
         Intent intent = getIntent();
         int stage = intent.getIntExtra("stage",0);

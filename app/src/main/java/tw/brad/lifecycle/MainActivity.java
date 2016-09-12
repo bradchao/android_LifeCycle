@@ -5,8 +5,11 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+    private TextView tv;
+    private MyApp myApp;
 
     public MainActivity(){
         Log.d("brad", "MainActivity");
@@ -17,6 +20,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Log.d("brad", "onCreate");
+        //tv.setText("OK");
+
+        myApp = (MyApp)getApplication();
+        Log.d("brad", "myApp:a=" + myApp.getA());
+        Log.d("brad", "myApp:b=" + myApp.getB());
+        myApp.setA(321);
+        myApp.setB("III");
+
     }
 
     @Override
